@@ -41,7 +41,7 @@
         </build>
 
         <scm>
-            <developerConnection>scm:git:</developerConnection>
+            <developerConnection>scm:git:https://github.com/tiko-oss/product-stock-manager.git</developerConnection>
             <tag>HEAD</tag>
         </scm>
 
