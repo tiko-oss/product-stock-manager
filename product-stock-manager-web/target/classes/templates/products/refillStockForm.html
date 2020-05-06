@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<h2>Product</h2>
+
+<form action="#" th:action="@{/update_refill}" th:object="${product}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <p>
+        Manufacturer: <span th:text="*{manufacturer}"></span>
+    </p>
+    <p>
+        Model: <span th:text="*{model}"></span>
+    </p>
+    <p>
+        Current Quantity:  <span th:text="*{quantity}"></span>
+    </p>
+    <p>
+        Add Quantity: <input type="number" name="addQuantity" value="0" min="0">
+    </p>
+    <p>
+        <input type="submit" value="Submit"/> <input type="reset" value="Reset">
+    </p>
+</form>
+
+</body>
+</html>

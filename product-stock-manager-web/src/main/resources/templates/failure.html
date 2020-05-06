@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+
+<h2>Process failed!</h2>
+
+
+<table class="table table-striped" th:object="${product}">
+    <tr>
+        <th>Name:</th>
+        <td><b th:text="*{manufacturer + ' ' + model}"></b></td>
+    </tr>
+</table>
+
+<br>
+<br>
+<br>
+
+<a href="/" class="btn btn-default">Home</a>
+
+&nbsp; | &nbsp;
+
+<a th:href="@{/{id}(id = ${product.id})}" class="btn btn-default">Product Details</a>
+
+</body>
+
+</html>

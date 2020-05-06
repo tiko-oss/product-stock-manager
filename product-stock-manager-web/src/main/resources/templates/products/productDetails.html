@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+
+<h2>Product Information</h2>
+
+
+<table class="table table-striped" th:object="${product}">
+    <tr>
+        <th>Name:</th>
+        <td><b th:text="*{manufacturer + ' ' + model}"></b></td>
+    </tr>
+    <tr>
+        <th>Price:</th>
+        <td th:text="'$' + *{price}" /></td>
+    </tr>
+    <tr>
+        <th>Stock:</th>
+        <td><b th:text="*{quantity}"></b></td>
+    </tr>
+    <tr>
+        <th>Details:</th>
+        <td th:text="*{details}" /></td>
+    </tr>
+</table>
+
+<br>
+<br>
+<br>
+
+<a th:href="@{{id}/refill(id=${product.id})}" class="btn btn-default">Refill Stock</a>
+
+&nbsp; | &nbsp;
+
+<a th:href="@{{id}/reduce(id=${product.id})}" class="btn btn-default">Buy</a>
+
+</body>
+
+</html>

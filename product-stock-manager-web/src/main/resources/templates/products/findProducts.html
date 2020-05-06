@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Stock Manager</title>
+</head>
+<body>
+<h1>Product List</h1>
+
+<table>
+    <tr>
+        <th style="width: 150px;">ID</th>
+        <th style="width: 150px;">Manufacturer</th>
+        <th style="width: 150px;">Model</th>
+        <th style="width: 150px;">Price</th>
+        <th style="width: 150px;">Stock</th>
+    </tr>
+    <tr th:each="product : ${product}">
+        <td>
+            <a th:href="@{/__${product.id}__}"
+               th:text="${product.manufacturer + ' ' + product.model}"/></a>
+        </td>
+        <td th:text="${product.manufacturer}"></td>
+        <td th:text="${product.model}"></td>
+        <td th:text="'$' + ${product.price}"></td>
+        <td th:text="${product.quantity}"></td>
+    </tr>
+</table>
+
+<br>
+<br>
+<br>
+
+
+
+</body>
+</html>
